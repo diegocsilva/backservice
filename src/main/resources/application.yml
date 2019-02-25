@@ -1,0 +1,38 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  jpa:
+    hibernate:
+      ddl-auto : create
+    database : default
+    properties:
+      hibernate:
+        dialect : org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+  datasource.username : sa
+  datasource.password : sa
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:bootexample;MODE=MySQL
+
+backservice:
+  read:
+    homeData: "/home/diego/data/"
+    inputDir: "in/"
+    tempDir: "temp/"
+    extension: "dat"
+    waitForReactivityOfFolders: 5000
+    conf:
+      delimitingCharacter: "ç"
+      salesmanId: "001"
+      customerId: "002"
+      salesId: "003"
+  write:
+    outputDir: "ou/"
+    nameFileOutput: "report_output.done.dat"
+    msgAmountCustomer: "Amount of clients in the input file:"
+    msgAmountSaleman: "Amount of salesman in the input file:"
+    msgMostSale: "ID of the most expensive sale:"
+    msgWorstSaleman: "Worst salesman ever:"
